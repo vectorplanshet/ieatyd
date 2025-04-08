@@ -38,6 +38,7 @@
     width: 100%;
 }
 
+     
 .modal-background {
     position: fixed;
     top: 0;
@@ -124,10 +125,10 @@ input[type="text"]:focus {
         }
     
         .red-id {
-            color: rgb(0, 0, 0);
+            color: rgb(255, 0, 0);
         }
         .blue-id {
-            color: #000000;
+            color: #006aff;
         }
         
 
@@ -136,14 +137,14 @@ input[type="text"]:focus {
 .red-id .r-container,
 .red-id .rls-container 
 .red-id .icon-container {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 0, 0);
 }
 
 .blue-id .label-container,
 .blue-id .r-container,
 .blue-id .rls-container 
 .blue-id .icon-container {
-    color: #000000; /* Синий цвет для текста */
+    color: #006aff; /* Синий цвет для текста */
 }
         .shifted-id-x-101 {
             margin-left: 20px;
@@ -158,18 +159,18 @@ input[type="text"]:focus {
             margin-left: 25px;
         }
         .info-container {
-            line-height: 15px;
+            line-height: 16.5px;
         }
         .label-container {
             font-size: 14px;
-            font-weight: 450;
+            font-weight: 500;
                     font-family: 'Roboto', sans-serif;
  
             -webkit-text-stroke-color: black;
         }
         .r-container {
             font-size: 14px;
-            font-weight: 450;
+            font-weight: 500;
             font-family: 'Roboto', sans-serif;
  
         }
@@ -180,25 +181,28 @@ input[type="text"]:focus {
             display: flex;
     flex-direction: column;
     justify-content: center;
-    font-weight: 450;
+    font-weight: 500;
    }
         .rls-container {
             font-size: 14px;
             display: flex;
             font-family: 'Roboto', sans-serif;
-            font-weight: 450;
+            font-weight: 500;
     flex-direction: column;
     justify-content: center;
    }
+   .info-container {
+            line-height: 16,5px;
+        }
         .label1-container {
             font-size: 14px;
             font-family: 'Roboto', sans-serif;
-            font-weight: 450;
+            font-weight: 500;
             -webkit-text-stroke-color: black;
         }
         .r1-container {
             font-size: 14px;
-            font-weight: 450;
+            font-weight: 500;
             font-family: 'Roboto', sans-serif;
  
         }
@@ -237,14 +241,14 @@ input[type="text"]:focus {
         .icon-container {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     font-size: 14px;
     position: absolute;
     white-space: nowrap; /* Убираем перенос текста */
 }
         .icon-container .icon {
-            width: 34px;
-            height: 34px;
+            width: 33px;
+            height: 33px;
             object-fit: cover;
             display: block;
         }
@@ -283,7 +287,7 @@ input[type="text"]:focus {
 .leaflet-control-attribution {
     display: none !important;
 }
-        #alert-menu h3 {
+#alert-menu h3 {
             margin: 0 0 10px;
             text-align: center;
             font-size: 16px;
@@ -318,32 +322,6 @@ input[type="text"]:focus {
     z-index: 1000; /* Поверх карты */
     opacity: 0.1; /* Сделать картинку менее прозрачной */
     transition: filter 0.3s ease; /* Плавный переход фильтра */
-}
-#topbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background-color: #2d3240; /* синий */
-    
-    z-index: 1005;
-}
-#sidebar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px; /* Узкая боковая панель */
-    height: 100%; /* На всю высоту экрана */
-    background-color: #2d3240; /* Темный цвет для панели */
-    z-index: 1000; /* Слои, чтобы быть выше карты */
-}
-.leaflet-control-layers {
-    z-index: 2000; /* Выше, чем topbar */
-    position: relative; /* или absolute, если нужно */
-    top: 60px; /* чтобы слой не перекрывал панель */
-    background-color: #2d3240;
-    color: #c4c4c4;
 }
 /* Кастомизация всплывающего окна */
 .leaflet-popup-content {
@@ -451,12 +429,38 @@ input[type="text"]:focus {
     width: 170px;  /* Задаем размер иконки (по желанию) */
     height: 25px; /* Задаем размер иконки (по желанию) */
 }
-.inputWrapper {
+        .inputWrapper {
         display: flex;
         flex-direction: column;
         gap: 10px; /* Расстояние между логином и паролем */
         margin-bottom: 205px; /* Отступ вниз до кнопки */
     }
+    #topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #2d3240; /* синий */
+    
+    z-index: 1005;
+}
+#sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px; /* Узкая боковая панель */
+    height: 100%; /* На всю высоту экрана */
+    background-color: #2d3240; /* Темный цвет для панели */
+    z-index: 1000; /* Слои, чтобы быть выше карты */
+}
+.leaflet-control-layers {
+    z-index: 2000; /* Выше, чем topbar */
+    position: relative; /* или absolute, если нужно */
+    top: 60px; /* чтобы слой не перекрывал панель */
+    background-color: #2d3240;
+    color: #c4c4c4;
+}
     </style>
 </head>
 <body>
@@ -500,90 +504,32 @@ input[type="text"]:focus {
         <button class="modal-button" id="targetSubmit"><i class="fas fa-check"></i> Подтвердить</button>
         <button class="modal-button modal-close" id="targetClose"><i class="fas fa-times"></i> Закрыть</button>
     </div>
+    
     <div id="alert-container">
         <button id="alert-button"><i class="fas fa-bell"></i></button>
         <div id="alert-menu">
             <h3>Дать тревогу</h3>
             <div>
-                <input type="checkbox" id="Сумская область"><label for="Сумская область">Сумская область</label>
+                <input type="checkbox" id="Гомельская область"><label for="Гомельская область">Гомельская область</label>
             </div>
             <div>
-                <input type="checkbox" id="г.Киев"><label for="г.Киев">г.Киев</label>
+                <input type="checkbox" id="Брестская область"><label for="Брестская область">Брестская область</label>
             </div>
             <div>
-                <input type="checkbox" id="Харьковская область"><label for="Харьковская область">Харьковская область</label>
+                <input type="checkbox" id="Минск"><label for="Минск">Минск</label>
             </div>
             <div>
-                <input type="checkbox" id="Черниговская область"><label for="Черниговская область">Черниговская область</label>
+                <input type="checkbox" id="Минская область"><label for="Минская область">Минская область</label>
             </div>
             <div>
-                <input type="checkbox" id="Полтавская область"><label for="Полтавская область">Полтавская область</label>
+                <input type="checkbox" id="Могилёвская область"><label for="Могилёвская область">Могилёвская область</label>
             </div>
             <div>
-                <input type="checkbox" id="Днепропетровская область"><label for="Днепропетровская область">Днепропетровская область</label>
+                <input type="checkbox" id="Витебская область"><label for="Витебская область">Витебская область</label>
             </div>
             <div>
-                <input type="checkbox" id="Киевская область"><label for="Киевская область">Киевская область</label>
+                <input type="checkbox" id="Гродненская область"><label for="Гродненская область">Гродненская область</label>
             </div>
-<div>
-            <input type="checkbox" id="Житомирская область"><label for="Житомирская область">Житомирская область</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Черкасская область"><label for="Черкасская область">Черкасская область</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Луганская область"><label for="Луганская область">Луганская область</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Донецкая область"><label for="Донецкая область">Донецкая область</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Кировоградская область"><label for="Кировоградская область">Кировоградская область</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Винницкая область"><label for="Винницкая область">Винницкая область</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Черновицкая область"><label for="Черновицкая область">Черновицкая область</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Херсонская область"><label for="Днепропетровская область">Херсонская область</label>
-        </div>
-        <div>
-            <input type="checkbox" id="А.Р Крым"><label for="А.Р Крым">А.Р Крым</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Одесская область"><label for="Одесская область">Одесская область</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Николаевская область"><label for="Николаевская область">Николаевская область</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Хмельницкая область"><label for="Хмельницкая область">Хмельницкая область</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Ровенская область"><label for="Ровенская область">Ровенская область</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Тернопольская область"><label for="Тернопольская область">Тернопольская область</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Ивано-Франковская область"><label for="Ивано-Франковская область">Ивано-Франковская область</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Закарпатская область"><label for="Закарпатская область">Закарпатская область</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Волынская область"><label for="Волынская область">Волынская область</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Львовская область"><label for="Львовская область">Львовская область</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Запорожская область"><label for="Запорожская область">Запорожская область</label>
-        </div>
-        <div>
-            <input type="checkbox" id="По всей территории"><label for="По всей территории">По всей территории</label>
         </div>
 
     </div>
@@ -595,25 +541,21 @@ input[type="text"]:focus {
     integrity="sha384-8SqKZR7V8uOetpjjbcNJHvwuHpb074WS0UXjCLhzfJUqYn3B/uWx1WVv5mwRp1mV"
     crossorigin="anonymous"
 ></script>
-<script>
-    const correctLogin = "admin";  // Указываем правильный логин
-const correctPassword = "12339321";  // Указываем правильный пароль
-
+    <script>
+ const correctPassword = "11611488";
 document.getElementById("submitButton").addEventListener("click", function() {
-let userLogin = document.getElementById("loginInput").value;
-let userPassword = document.getElementById("passwordInput").value;
-
-if (userLogin === correctLogin && userPassword === correctPassword) {
-    document.getElementById("passwordContainer").style.display = "none"; // Прячем форму
-    document.getElementById("map").style.display = "block"; // Показываем карту
-    initMap(); // Загружаем карту
-} else {
-    alert("Неверный логин или пароль!");
-}
+    let userPassword = document.getElementById("passwordInput").value;
+    if (userPassword === correctPassword) {
+        document.getElementById("passwordContainer").style.display = "none"; // Прячем форму
+        document.getElementById("map").style.display = "block"; // Показываем карту
+        initMap(); // Загружаем карту
+    } else {
+        alert("Неверный пароль!");
+    }
 });
         const map = L.map('map', {
             zoomControl: false
-        }).setView([48.3794, 31.1656], 7);
+        }).setView([53.9, 27.6], 7);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -880,17 +822,20 @@ updateOverlayFilter();
             <div class="info-container ${shiftedClass} ${shiftedClasss}">
                 <span class="label1-container ${iconClass}">${objectId} ${kievTime}</span>
                 <div class="info-container ${shiftedClass} ${shiftedClasss}">
-                <span class="r1-container ${iconClass}">ЕППО</span>
+                <span class="r1-container ${iconClass}">ЕПВО</span>
                 <span class="rls1-container ${iconClass}">${objectId1}</span>
             </div>
                         </div>
         </div>
     `;
+    setTimeout(() => {
+        marker.remove();
+    }, 1200000);
 } else {
     // Условия для выбора иконки в зависимости от скорости
     if (speed >= 120 && speed <= 121) {
         iconUrl = 'supercam.png';
-    } else if (speed > 120 && speed <= 200) {
+    } else if (speed > 120 && speed <= 170) {
         iconUrl = 'shahed.png';
     } else if (speed >= 7559 && speed < 7560) {
         iconUrl = 'iskander.png';
@@ -945,7 +890,7 @@ updateOverlayFilter();
         iconUrl = 'lutiy.png';
         iconClass = 'blue-id';
         lineColor = '#006aff';  // Set blue line color for blue objects
-    } else if (speed >= 201 && speed <= 202) {
+    } else if (speed >= 200 && speed <= 201) {
         iconUrl = 'beaver.png';
         iconClass = 'blue-id';
         lineColor = '#006aff';  // Set blue line color for blue objects
@@ -1148,7 +1093,7 @@ requestAnimationFrame(updatePosition);
 
                 deleteMode = false;
                 const deleteButton = document.getElementById('deleteButton');
-                deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>=';
+                deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
             }
         }
     });
@@ -1172,23 +1117,31 @@ requestAnimationFrame(updatePosition);
             event.preventDefault();
             event.returnValue = '';
         });
-// РЛС для объектов
-const rlsOptions = [
-    "79К6",
-    "35Д6М",
-    "Малахіт",
-    "Малахіт", // Увеличиваем вероятность "Малахіт"
-    "Малахіт"
-    
-];
+        // РЛС для объектов
+        const rlsOptions = [
+    "59H6-E",
+    "Родник",
+    "Роса-РБ-М",
+    "Восток-3D",
+    "5Н84А",
+    "19Ж6М",
+    "Малахит"
+]; // Исключаем "Волга" из общего списка
 
 // Функция для выбора РЛС
 function getRlsForObject(objectId, iconUrl) {
-    // Для всех объектов (включая спецобъекты) выбираем случайную РЛС
-    const randomIndex = Math.floor(Math.random() * rlsOptions.length);
-    return rlsOptions[randomIndex];
-}
+    // Уникальные РЛС для Iskander-M, Tsircon, Kinzhal, Atacms
+    const specialRls = ["iskander.png", "Tsirkon.png", "Kinzhal.png", "atacms.png"];
+    let rls = "Волга"; // по умолчанию для специальных объектов
 
+    if (specialRls.includes(iconUrl)) {
+        return rls; // Возвращаем "Волга" только для специальных объектов
+    } else {
+        // Для остальных объектов выбираем случайную РЛС, исключая "Волга"
+        const randomIndex = Math.floor(Math.random() * rlsOptions.length);
+        return rlsOptions[randomIndex];
+    }
+}
 map.on('contextmenu', function (e) {
     const coords = `${e.latlng.lat}, ${e.latlng.lng}`;
     navigator.clipboard.writeText(coords).then(() => {
@@ -1214,6 +1167,10 @@ fetch("front.json")
           color = '#a52714'; // Цвет для "Оккупировано"
           opacity = 0.0
           fillOpacity = 0.25// Заливка полупрозрачная
+        } else if (feature.properties.name === 'Возвращён контроль') {
+          color = '#a52714'; // Цвет для "Оккупировано"
+          opacity = 0.0
+          fillOpacity = 0.25// Заливка полупрозрачная
         } else if (feature.properties.name === 'Неизвестно') {
           color = '#bdbdbd'; // Цвет для "Неизвестно"
           opacity = 0.1; // Прозрачность границы
@@ -1234,57 +1191,37 @@ fetch("front.json")
   .catch(error => console.error("Ошибка загрузки JSON:", error));
 
   let polygons = {};
-let menuVisible = false;
+        let menuVisible = false;
 
-fetch('trevoga.json')
-    .then(response => response.json())
-    .then(geojsonData => {
-        let regions = {};
-        geojsonData.features.forEach(feature => {
-            let name = feature.properties.name;
-            regions[name] = feature;
-        });
+        fetch('trevoga.json')
+            .then(response => response.json())
+            .then(geojsonData => {
+                let regions = {};
+                geojsonData.features.forEach(feature => {
+                    let name = feature.properties.name;
+                    regions[name] = feature;
+                });
 
-        // Автоматически активируем "Луганская область" и "А. Р Крым"
-        const autoActivateRegions = ["Луганская область", "А.Р Крым"];
-        
-        document.querySelectorAll('#alert-menu input[type=checkbox]').forEach(checkbox => {
-            checkbox.onchange = function() {
-                let region = checkbox.id;
-                if (checkbox.checked && regions[region]) {
-                    let layer = L.geoJSON(regions[region], {
-                        style: { color: 'red', fillColor: 'red', fillOpacity: 0.1, weight: 0.6 }
-                    }).addTo(map);
-                    polygons[region] = layer;
-                } else if (polygons[region]) {
-                    map.removeLayer(polygons[region]);
-                    delete polygons[region];
-                }
-            };
-
-            // Автоматически ставим галочку для нужных регионов и активируем их
-            if (autoActivateRegions.includes(checkbox.id)) {
-                checkbox.checked = true;
-                checkbox.onchange();  // Вызываем onchange вручную для активированного региона
-            }
-        });
-
-        // Обработчик для чекбокса "По всей территории"
-        document.getElementById('По всей территории').onchange = function() {
-            let isChecked = this.checked;
-            document.querySelectorAll('#alert-menu input[type=checkbox]').forEach(checkbox => {
-                if (checkbox.id !== 'По всей территории') {
-                    checkbox.checked = isChecked;
-                    checkbox.onchange();  // Активируем или деактивируем регионы в зависимости от состояния
-                }
+                document.querySelectorAll('#alert-menu input[type=checkbox]').forEach(checkbox => {
+                    checkbox.onchange = function() {
+                        let region = checkbox.id;
+                        if (checkbox.checked && regions[region]) {
+                            let layer = L.geoJSON(regions[region], {
+                                style: { color: 'red', fillColor: 'red', fillOpacity: 0.07, weight: 0.5 }
+                            }).addTo(map);
+                            polygons[region] = layer;
+                        } else if (polygons[region]) {
+                            map.removeLayer(polygons[region]);
+                            delete polygons[region];
+                        }
+                    };
+                });
             });
-        };
-    });
 
-document.getElementById('alert-button').onclick = function() {
-    menuVisible = !menuVisible;
-    document.getElementById('alert-menu').style.display = menuVisible ? 'block' : 'none';
-};
+        document.getElementById('alert-button').onclick = function() {
+            menuVisible = !menuVisible;
+            document.getElementById('alert-menu').style.display = menuVisible ? 'block' : 'none';
+        };
         function getKievTime() {
     const options = {
         timeZone: 'Europe/Kiev',
